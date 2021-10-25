@@ -100,11 +100,16 @@ public class CharacterMoveController : MonoBehaviour
         Debug.DrawLine(transform.position, transform.position + (Vector3.down * groundRaycastDistance), Color.white);
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         score.FinishScoring();
         gameOverScreen.SetActive(true);
         gameCamera.enabled = false;
         this.enabled = false;
+    }
+
+    public void DeadAnim()
+    {
+        anim.SetTrigger("Dead");
     }
 }
